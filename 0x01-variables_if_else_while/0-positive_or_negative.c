@@ -1,25 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 /**
- * main - Generates a random index and determines
- * whether a given number is positive, negative
- * or zero.
- * Return: Always 0 (Success)
+ * main - Print if number is positive, zero or negative
+ *
+ * Return: Always (Success)
  */
 int main(void)
 {
-int n;
+	int n;
 
-n = rand() - RAND_MAX / 2;
-
-if (n > 0)
-printf("%d is positive\n", n);
-
-alse if (n < 0)
-printf("%d is negative\n", n);
-else if (n == 0)
-printf("%d is zero\n", n);
-
-return (0);
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	if (n > 0)
+	{
+		printf("%d is positive\n", n);
+	}
+	else if (n == 0)
+	{
+		printf("%d is zero\n", n);
+	}
+	else
+	{
+		printf("%d is negative\n", n);
+	}
+	return (0);
 }
