@@ -1,1 +1,1 @@
-A directory fir loops
+A directory for loop
