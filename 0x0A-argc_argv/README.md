@@ -1,1 +1,1 @@
-Average
+Static Libraries
