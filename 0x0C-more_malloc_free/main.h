@@ -1,13 +1,16 @@
-#ifndef MAIN_H
-#define MAIN_H
+#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-int _putchar(char c);
-char *create_array(unsigned int size, char c);
-char *_strdup(char *str);
-char *str_concat(char *s1, char *s2);
-int **alloc_grid(int width, int height);
-void free_grid(int **grid, int height);
-char *argstostr(int ac, char **av);
-char **strtow(char *str);
-
-#endif
+/**
+ * malloc_checked - function that allocates
+ * @b: numbers of bits to use
+ * Return: 98
+ */
+void *malloc_checked(unsigned int b)
+{
+	void *ptr = malloc(b);
+	if (ptr == NULL)
+		exit(98);
+	return (ptr);
+}
