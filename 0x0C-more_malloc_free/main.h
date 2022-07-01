@@ -1,16 +1,17 @@
-#include "main.h"
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * malloc_checked - function that allocates
- * @b: numbers of bits to use
- * Return: 98
- */
-void *malloc_checked(unsigned int b)
-{
-	void *ptr = malloc(b);
-	if (ptr == NULL)
-		exit(98);
-	return (ptr);
-}
+void *malloc_checked(unsigned int b);
+char *string_nconcat(char *s1, char *s2, unsigned int n);
+void *_calloc(unsigned int nmemb, unsigned int size);
+int *array_range(int min, int max);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+int is_digit(char *s);
+void errors(void);
+int _strlen(char *s);
+int _putchar(char c);
+
+#endif /*MAIN_H */
