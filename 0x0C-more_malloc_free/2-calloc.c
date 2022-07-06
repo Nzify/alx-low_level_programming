@@ -1,55 +1,40 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * str_concat - function that concatenates two strings
- *
- * @s1: string of chars
- * @s2: string of chars
- *
- * Return: address of the newly allocated memory
+ * _memset - a function that allocates memory
+ * @s: string
+ * @b: input
+ * @n: bytes
+ * Return: string
  */
-
-char *str_concat(char *s1, char *s2)
+char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int len1, len2;
-	unsigned int i, j;
-	char *str_copy;
-	char *tmp1 = s1;
-	char *tmp2 = s2;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
+	unsigned int i;
 
-	i = 0;
-	while (*s1++)
-		i++;
-	len1 = i;
-	s1 = tmp1;
-
-	i = 0;
-	while (*s2++)
-		i++;
-	len2 = i;
-	s2 = tmp2;
-
-	str_copy = malloc((len1 + len2) * sizeof(char) + 1);
-	if (str_copy == NULL)
-		return (NULL);
-
-	while (j < len1)
+	for (i = 0; i < n; i++)
 	{
-		str_copy[j] = s1[j];
-		j++;
+		s[i] = b;
 	}
-	while (j < len1 + len2)
+	return (s);
 	{
-		str_copy[j] = s2[j - len1];
-		j++;
-	}
-	str_copy[j] = '\0';
-	return (str_copy);
+
+/**
+ * _calloc - allocates memory for an array using malloc
+ * @nmemb: n elements
+ * @size: bytes
+ * Return: pointer
+ */
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+	
+	void *p;
+	if (nmemb == 0 || size == 0)
+	return (NULL);
+	p = malloc(nmemb * size);
+
+	if (p == NULL)
+	return (NULL);
+	_memset(p, 0, (nmemb * size));
+	return (p);
 }
